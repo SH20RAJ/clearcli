@@ -23,8 +23,10 @@ dist/
 downloads/
 lib/
 lib64/
-
+.kiro/
 # Virtual environments
+.gitignore
+
 .venv/
 env/
 venv/
@@ -77,3 +79,4 @@ htmlcov/
 *.backup
 temp/
 tmp/
+.gitignore
