@@ -246,7 +246,7 @@ export class SafetyManager {
         if (method === 'trash') {
             message += ' Items will be moved to trash and can be restored from there.';
         } else {
-            message += ' Items will be quarantined and can be restored using cleancli.';
+            message += ' Items will be quarantined and can be restored using clearcli.';
         }
 
         // Prepare details array

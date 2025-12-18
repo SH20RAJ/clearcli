@@ -10,7 +10,7 @@ export class QuarantineManager {
     private readonly VERSION = '1.0.0';
 
     constructor(rootDir?: string) {
-        const baseDir = rootDir || join(homedir(), '.cleancli');
+        const baseDir = rootDir || join(homedir(), '.clearcli');
         this.quarantineDir = join(baseDir, 'quarantine');
         this.indexPath = join(baseDir, 'quarantine-index.json');
     }

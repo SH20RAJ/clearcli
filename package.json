@@ -1,15 +1,15 @@
 {
-    "name": "cleancli",
+    "name": "clearcli",
     "version": "1.0.0",
     "description": "A fast, safe, cross-platform cleanup CLI with a beautiful terminal UI",
-    "main": "dist/cleancli.js",
+    "main": "dist/clearcli.js",
     "bin": {
-        "cleancli": "./dist/cleancli.js"
+        "clearcli": "./dist/clearcli.js"
     },
     "scripts": {
         "build": "tsc",
         "dev": "tsc --watch",
-        "start": "node dist/cleancli.js",
+        "start": "node dist/clearcli.js",
         "test": "jest",
         "lint": "eslint src/**/*.ts",
         "clean": "rm -rf dist"

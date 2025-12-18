@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * cleancli - A fast, safe, cross-platform cleanup CLI with a beautiful terminal UI
+ * clearcli - A fast, safe, cross-platform cleanup CLI with a beautiful terminal UI
  * 
  * Entry point for the application
  */
@@ -11,7 +11,7 @@ import { hideBin } from 'yargs/helpers';
 
 async function main() {
     const argv = await yargs(hideBin(process.argv))
-        .scriptName('cleancli')
+        .scriptName('clearcli')
         .usage('$0 [options]')
         .option('preset', {
             alias: 'p',

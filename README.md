@@ -1,4 +1,4 @@
-# cleancli
+# clearcli
 
 A fast, safe, cross-platform cleanup CLI with a beautiful terminal UI built with Node.js and Ink.
 
@@ -16,7 +16,7 @@ A fast, safe, cross-platform cleanup CLI with a beautiful terminal UI built with
 ## Installation
 
 ```bash
-npm install -g cleancli
+npm install -g clearcli
 ```
 
 ## Development
@@ -42,26 +42,26 @@ npm run lint
 
 ```bash
 # Interactive mode
-cleancli
+clearcli
 
 # Run with preset
-cleancli --preset node
+clearcli --preset node
 
 # Dry run mode
-cleancli --dry-run
+clearcli --dry-run
 
 # Developer mode
-cleancli --dev-mode
+clearcli --dev-mode
 
 # Skip confirmations
-cleancli --yes
+clearcli --yes
 ```
 
 ## Project Structure
 
 ```
 src/
-├── cleancli.ts      # CLI entry point
+├── clearcli.ts      # CLI entry point
 ├── scanner/         # File system scanning engine
 ├── ui/              # Ink-based React components
 ├── safety/          # Trash integration and quarantine system
