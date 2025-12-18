@@ -11,11 +11,11 @@ describe('QuarantineManager', () => {
     let testFile2: string;
 
     beforeEach(async () => {
-        quarantineManager = new QuarantineManager();
-
         // Create a temporary test directory and files
         testDir = join(tmpdir(), `cleancli-quarantine-test-${Date.now()}`);
         await fs.mkdir(testDir, { recursive: true });
+
+        quarantineManager = new QuarantineManager(testDir);
 
         testFile = join(testDir, 'test-file.txt');
         testFile2 = join(testDir, 'test-file-2.txt');

@@ -12,11 +12,11 @@ describe('SafetyManager', () => {
     let testFile2: string;
 
     beforeEach(async () => {
-        safetyManager = new SafetyManager();
-
         // Create a temporary test directory and files
         testDir = join(tmpdir(), `cleancli-safety-test-${Date.now()}`);
         await fs.mkdir(testDir, { recursive: true });
+
+        safetyManager = new SafetyManager(testDir);
 
         testFile = join(testDir, 'test-file.txt');
         testFile2 = join(testDir, 'test-file-2.txt');

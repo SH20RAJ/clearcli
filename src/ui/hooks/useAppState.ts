@@ -117,6 +117,14 @@ export const useAppState = (options: UseAppStateOptions = {}) => {
         updateState({ lastOperation: operation });
     }, [updateState]);
 
+    // Computed values - Use fuzzy search for filtering
+    const filteredResults = useMemo(() => {
+        if (!appState.filterText.trim()) {
+            return appState.scanResults.map(item => ({ ...item, fuzzyMatch: { score: 1, matches: [] } }));
+        }
+        return fuzzyFilter(appState.scanResults, appState.filterText, (item) => item.path);
+    }, [appState.scanResults, appState.filterText]);
+
     // Focus navigation helpers
     const moveFocus = useCallback((direction: 'up' | 'down') => {
         // Use filtered results for navigation
@@ -135,14 +143,6 @@ export const useAppState = (options: UseAppStateOptions = {}) => {
 
         setFocusedItem(filteredResults[newIndex]?.path || null);
     }, [filteredResults, appState.focusedItem, setFocusedItem]);
-
-    // Computed values - Use fuzzy search for filtering
-    const filteredResults = useMemo(() => {
-        if (!appState.filterText.trim()) {
-            return appState.scanResults.map(item => ({ ...item, fuzzyMatch: { score: 1, matches: [] } }));
-        }
-        return fuzzyFilter(appState.scanResults, appState.filterText, (item) => item.path);
-    }, [appState.scanResults, appState.filterText]);
 
     const selectedCount = appState.selectedItems.size;
     const totalSize = appState.scanResults.reduce((sum, result) => sum + result.size, 0);

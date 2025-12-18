@@ -10,9 +10,9 @@ export class SafetyManager {
     private quarantineManager: QuarantineManager;
     private systemPaths: Set<string>;
 
-    constructor() {
+    constructor(rootDir?: string) {
         this.trashManager = new TrashManager();
-        this.quarantineManager = new QuarantineManager();
+        this.quarantineManager = new QuarantineManager(rootDir);
         this.systemPaths = this.initializeSystemPaths();
     }
 
